@@ -1,25 +1,8 @@
 package dev.estudo.desafio;
 
-public class Curso {
-    private String titulo;
-    private String descricao;
+public class Curso extends Conteudo{
+
     private int cargaHoraria;
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
 
     public int getCargaHoraria() {
         return cargaHoraria;
@@ -27,5 +10,17 @@ public class Curso {
 
     public void setCargaHoraria(int cargaHoraria) {
         this.cargaHoraria = cargaHoraria;
+    }
+
+    @Override
+    public double calcularXp() {
+        return XP * cargaHoraria;
+    }
+
+    @Override
+    public String toString() {
+        return "Curso{" +
+                "cargaHoraria=" + cargaHoraria + "H, titulo='" + getTitulo() + '\'' + ", descricao='" + getDescricao() + '\'' +
+                '}';
     }
 }
