@@ -1,24 +1,25 @@
 package dev.estudo.desafio;
 
-import java.util.Date;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-public class Mentoria extends Conteudo{
-    private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-    private Date data;
 
-    public Date getData() {
+public class Mentoria extends Conteudo {
+    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    private LocalDate data;
+
+    public LocalDate getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
 
     @Override
     public String toString() {
         return "Mentoria{" +
-                "data=" + sdf.format(data) + ", titulo='" + getTitulo() + '\'' + ", descricao='" + getDescricao() + '\'' +
+                "data=" + data.format(FORMATTER) + ", titulo='" + getTitulo() + '\'' + ", descricao='" + getDescricao() + '\'' +
                 '}';
     }
 

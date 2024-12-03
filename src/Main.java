@@ -1,11 +1,16 @@
-import dev.estudo.desafio.*;
-import java.text.SimpleDateFormat;
+import dev.estudo.desafio.Bootcamp;
+import dev.estudo.desafio.Curso;
+import dev.estudo.desafio.Dev;
+import dev.estudo.desafio.Mentoria;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Set;
 
 
 public class Main {
     public static void main(String[] args) {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
         Dev dev = new Dev("Gabriel");
 
@@ -19,7 +24,7 @@ public class Main {
         mentoria.setDescricao("Descrição da mentoria de Java");
 
         try {
-            mentoria.setData(sdf.parse("20/05/2023"));
+            mentoria.setData(LocalDate.parse("10/10/2022", formatter));
         } catch (Exception e) {
             System.out.println("Erro ao converter data");
         }
